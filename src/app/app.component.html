@@ -1,0 +1,19 @@
+<nz-layout class="layout">
+  <nz-header>
+    <div class="logo"></div>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
+      <li nz-menu-item [nzSelected]="true">Orders</li>
+    </ul>
+  </nz-header>
+  <nz-content style="padding:0 50px;">
+    <nz-breadcrumb style="margin:16px 0;">
+      <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+      <nz-breadcrumb-item>Orders</nz-breadcrumb-item>
+    </nz-breadcrumb>
+    <div style="background:#fff; padding: 24px; min-height: 280px;">
+      <h3>Orders</h3>     
+      <app-orders-list></app-orders-list>
+    </div>
+  </nz-content>
+  <nz-footer style="text-align: center;">Ship Station Orders ©2018</nz-footer>
+</nz-layout>

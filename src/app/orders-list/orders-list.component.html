@@ -1,0 +1,46 @@
+<div nz-row style="margin-bottom: 15px;" nzGutter="16">
+  <div nz-col nzSpan="8">
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input type="text" [(ngModel)]="search" (keyup.enter)="applyFilters()" nz-input placeholder="Search for customer names">
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <i nz-icon type="search"></i>
+    </ng-template>
+
+  </div>
+  <div nz-col nzSpan="8">
+    <button nz-button nzType="primary" [nzLoading]="loading" (click)="applyFilters()"><i nz-icon type="search"></i>Search</button>
+  </div>
+</div>
+
+    <nz-table
+      #ordersTable
+      nzShowSizeChanger
+      nzSize="middle"
+      [nzLoading]="loading"
+      [nzData]="displayOrders"
+      [nzPageSize]="10"
+      >
+      <thead (nzSortChange)="sort($event)" nzSingleSort>
+        <tr>
+          <th>No.</th>
+          <th nzShowSort nzSortKey="orderId">Id</th>
+          <th nzShowSort nzSortKey="orderNumber">Order</th>
+          <th nzShowSort nzSortKey="orderDate">Date</th>
+          <th>Customer</th>
+          <th nzShowSort nzSortKey="customerEmail"><span>Customer Email</span></th>
+          <th nzShowSort nzSortKey="orderTotal">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of ordersTable.data">
+          <td>{{order.orderKey}}</td>
+          <td>{{order.orderId}}</td>
+          <td>{{order.orderNumber}}</td>
+          <td>{{order.orderDate | date}}</td>
+          <td>{{order.billTo.name}}</td>
+          <td>{{order.customerEmail}}</td>
+          <td>{{order.orderTotal | currency}}</td>
+        </tr>
+      </tbody>
+    </nz-table>
