@@ -1,6 +1,10 @@
 # ShipStation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+This is demo project done in [Angular](https://angular.io/). 
+
+It covers a simple implementation of the [ShipStation API](https://shipstation.docs.apiary.io)
+
+Uses [Ant Design for Angular ](https://ng.ant.design/docs/getting-started/en) library for UI/UX.
 
 ## Development server
 
